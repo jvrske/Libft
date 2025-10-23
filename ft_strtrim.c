@@ -39,7 +39,7 @@ int	left_right(const char *s1, const char *set)
 	return (0);
 }
 
-int	right_left(const char *s1, const char *set)
+static int	right_left(const char *s1, const char *set)
 {
 	size_t	i;
 	int	index2;
@@ -64,18 +64,6 @@ int	right_left(const char *s1, const char *set)
 		i--;
 	}
 	return (0);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-		i++;
-	return (i);
 }
 
 char	*ft_strtrim(const char *s1, const char *set)
@@ -103,11 +91,11 @@ char	*ft_strtrim(const char *s1, const char *set)
 	return (new_s);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int	main(void)
 {
 	char	*a = "xxxxx_C2xxxxx";
 	char	*b = "x_";
 	printf("%s\n", ft_strtrim(a, b));
 	return (0);
-}
+} */

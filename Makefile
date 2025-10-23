@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+         #
+#    By: jarske <jarske@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/22 12:53:30 by csilva            #+#    #+#              #
-#    Updated: 2025/10/22 13:00:31 by csilva           ###   ########.fr        #
+#    Updated: 2025/10/23 13:50:55 by jarske           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,8 @@ SRCS =	ft_atoi.c \
 		ft_strrchr.c \
 		ft_substr.c \
 		ft_tolower.c \
-		ft_toupper.c
+		ft_toupper.c \
+		ft_split.c
 OBJ = $(SRCS:.c=.o)
 
 all: $(NAME)
