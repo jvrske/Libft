@@ -6,7 +6,7 @@
 #    By: jarske <jarske@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/22 12:53:30 by csilva            #+#    #+#              #
-#    Updated: 2025/10/23 13:50:55 by jarske           ###   ########.fr        #
+#    Updated: 2025/10/23 15:45:38 by jarske           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,8 @@ SRCS =	ft_atoi.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c \
-		ft_split.c
+		ft_split.c \
+		ft_itoa.c
 OBJ = $(SRCS:.c=.o)
 
 all: $(NAME)

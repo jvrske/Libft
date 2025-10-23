@@ -6,7 +6,7 @@
 /*   By: jarske <jarske@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 11:55:23 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/23 13:50:18 by jarske           ###   ########.fr       */
+/*   Updated: 2025/10/23 14:12:46 by jarske           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 char    **ft_split(const char *s, char c);
+char    *ft_itoa(int n);
 
 #endif
