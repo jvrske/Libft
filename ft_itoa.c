@@ -1,51 +1,72 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 10:16:17 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/27 14:59:55 by csilva           ###   ########.fr       */
+/*   Created: 2025/10/24 12:22:33 by csilva            #+#    #+#             */
+/*   Updated: 2025/10/24 12:22:36 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+static int	int_len(int c)
 {
-	size_t	i;
-	size_t	s_len;
-	size_t	result;
-	char	*new_s;
+	int		len;
+	long	n;
 
-	i = 0;
-	s_len = ft_strlen(s);
-	if (start >= s_len)
-		result = 0;
-	else if (len > (s_len - start))
-		result = (s_len - start);
-	else
-		result = len;
-	new_s = malloc(sizeof(char) * (result + 1));
+	len = 0;
+	n = c;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		len++;
+		n = -n;
+	}
+	while (n > 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*new_s;
+	long	c;
+	int		len;
+
+	c = n;
+	len = int_len(c);
+	new_s = ft_calloc((len + 1), sizeof(char));
 	if (!new_s)
 		return (NULL);
-	while (i < result)
+	if (c < 0)
 	{
-		new_s[i] = s[start + i];
-		i++;
+		new_s[0] = '-';
+		c = -c;
 	}
-	new_s[i] = '\0';
+	if (c == 0)
+		new_s[0] = '0';
+	while (c > 0)
+	{
+		len--;
+		new_s[len] = (c % 10) + '0';
+		c /= 10;
+	}
 	return (new_s);
 }
 
 /* #include <stdio.h>
+
 int	main(void)
 {
-	char	*s = "Hello World";
-	int	i = 6;
-	int	j = 5;
+	int i = 12345;
 
-	printf("%s\n", ft_substr(s, i, j));
+	printf("%s\n", ft_itoa(i));
 	return (0);
 } */

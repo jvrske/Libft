@@ -6,7 +6,7 @@
 #    By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/22 12:53:30 by csilva            #+#    #+#              #
-#    Updated: 2025/10/22 13:00:31 by csilva           ###   ########.fr        #
+#    Updated: 2025/10/24 18:40:39 by csilva           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,18 @@ SRCS =	ft_atoi.c \
 		ft_strrchr.c \
 		ft_substr.c \
 		ft_tolower.c \
-		ft_toupper.c
+		ft_toupper.c \
+		ft_substr.c \
+		ft_split.c \
+		ft_itoa.c \
+		ft_strmapi.c \
+		ft_striteri.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
+		ft_strjoin.c \
+		ft_strtrim.c
 OBJ = $(SRCS:.c=.o)
 
 all: $(NAME)

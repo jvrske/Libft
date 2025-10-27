@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:43:55 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/21 14:37:29 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/24 17:50:43 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	if (!s)
-		return (0);
 	while (s[i])
 		i++;
 	return (i);

@@ -6,11 +6,10 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:59:03 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/21 11:52:00 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/24 17:48:37 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
 
 int	ft_toupper(int c)
@@ -20,7 +19,9 @@ int	ft_toupper(int c)
 	return (c);
 }
 
-/* int main(void)
+/* #include <stdio.h>
+
+int main(void)
 {
 	printf("%c\n", ft_toupper('A'));
 } */

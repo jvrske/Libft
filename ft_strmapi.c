@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 10:16:17 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/27 14:59:55 by csilva           ###   ########.fr       */
+/*   Created: 2025/10/24 11:25:13 by csilva            #+#    #+#             */
+/*   Updated: 2025/10/27 16:10:14 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	size_t	s_len;
-	size_t	result;
-	char	*new_s;
+	unsigned int	i;
+	char			*new_s;
 
 	i = 0;
-	s_len = ft_strlen(s);
-	if (start >= s_len)
-		result = 0;
-	else if (len > (s_len - start))
-		result = (s_len - start);
-	else
-		result = len;
-	new_s = malloc(sizeof(char) * (result + 1));
+	new_s = ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	if (!new_s)
 		return (NULL);
-	while (i < result)
+	while (s[i])
 	{
-		new_s[i] = s[start + i];
+		new_s[i] = f(i, s[i]);
 		i++;
 	}
 	new_s[i] = '\0';
@@ -40,12 +31,18 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 }
 
 /* #include <stdio.h>
+char	ft_toupperchar(unsigned int index, char c)
+{
+	(void) index;
+	return ((char) ft_toupper(c));
+}
+
 int	main(void)
 {
-	char	*s = "Hello World";
-	int	i = 6;
-	int	j = 5;
+	char const	*s = "libft";
+	char	*new_s;
 
-	printf("%s\n", ft_substr(s, i, j));
+	new_s = ft_strmapi(s, ft_toupperchar);
+	printf("%s\n", new_s);
 	return (0);
 } */

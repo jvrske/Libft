@@ -6,12 +6,11 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:43:47 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/21 14:38:21 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/24 17:46:09 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -30,7 +29,9 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-/* int	main(void)
+/* #include <stdio.h>
+
+int	main(void)
 {
 	char	*p = "Olamundo";
 	char s[15];

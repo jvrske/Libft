@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:12:49 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/22 10:31:32 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/27 15:29:42 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s1)
 	i = 0;
 	while (s1[i])
 		i++;
-	dst = (char *) malloc(sizeof(i) + 1);
+	dst = (char *) malloc(i + 1);
 	if (!dst)
 		return (NULL);
 	i = 0;
@@ -32,3 +32,10 @@ char	*ft_strdup(const char *s1)
 	dst[i] = 0;
 	return (dst);
 }
+
+/* #include "stdlib.h"
+
+int	main(void)
+{
+	ft_strdup("abcde");
+} */

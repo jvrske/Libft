@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 16:00:51 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/27 16:14:10 by csilva           ###   ########.fr       */
+/*   Created: 2025/10/24 14:52:45 by csilva            #+#    #+#             */
+/*   Updated: 2025/10/24 17:03:59 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-	size_t	j;
+	long	num;
+	char	c;
 
-	i = 0;
-	if (needle[0] == 0)
-		return ((char *)haystack);
-	while (haystack[i])
+	num = n;
+	if (num < 0)
 	{
-		j = 0;
-		while (haystack[i + j] == needle[j] && needle[j]
-			&& haystack[i + j] && i + j < len)
-			j++;
-		if (needle[j] == '\0')
-			return ((char *) &haystack[i]);
-		i++;
+		write(fd, "-", 1);
+		num = -num;
 	}
-	return (0);
+	if (num >= 10)
+		ft_putnbr_fd(num / 10, fd);
+	num = (num % 10);
+	c = num + '0';
+	write (fd, &c, 1);
 }
+
+/* int	main(void)
+{
+	int	i = -12345;
+
+	ft_putnbr_fd(i, 1);
+} */

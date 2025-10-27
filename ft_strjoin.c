@@ -1,34 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 16:00:51 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/27 16:14:10 by csilva           ###   ########.fr       */
+/*   Created: 2025/10/22 15:37:28 by csilva            #+#    #+#             */
+/*   Updated: 2025/10/24 17:50:58 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	size_t	i;
 	size_t	j;
+	char	*new_s;
 
 	i = 0;
-	if (needle[0] == 0)
-		return ((char *)haystack);
-	while (haystack[i])
+	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	new_s = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!new_s)
+		return (NULL);
+	while (s1[i])
 	{
-		j = 0;
-		while (haystack[i + j] == needle[j] && needle[j]
-			&& haystack[i + j] && i + j < len)
-			j++;
-		if (needle[j] == '\0')
-			return ((char *) &haystack[i]);
+		new_s[i] = s1[i];
 		i++;
 	}
-	return (0);
+	while (s2[j])
+	{
+		new_s[i + j] = s2[j];
+		j++;
+	}
+	new_s[i + j] = '\0';
+	return (new_s);
 }
+
+/* #include <stdio.h>
+int	main(void)
+{
+	char	*c = "Ola ";
+	char	*d = 0;
+	printf("%s\n", ft_strjoin(c, d));
+	return (0);
+} */

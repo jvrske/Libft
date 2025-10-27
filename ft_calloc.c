@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:04:47 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/22 10:31:39 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/27 16:45:46 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t			i;
 
 	i = 0;
-	tmp = malloc(sizeof(count * size));
+	if (!count || !size)
+		return (malloc(0));
+	tmp = malloc(count * size);
 	if (!tmp)
 		return (NULL);
 	while (i - count * size)
