@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 11:39:48 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/27 16:25:02 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/28 14:18:30 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	res = NULL;
-	cc = (unsigned char) c;
+	cc = (char) c;
 	while (s[i])
 	{
 		if (s[i] == cc)
 			res = (char *) &s[i];
 		i++;
 	}
-	if (s[i] == cc)
+	if (s[i] == c)
 		res = (char *) &s[i];
 	return (res);
 }

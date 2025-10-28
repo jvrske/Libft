@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 13:43:47 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/28 14:17:34 by csilva           ###   ########.fr       */
+/*   Created: 2025/10/28 15:05:59 by csilva            #+#    #+#             */
+/*   Updated: 2025/10/28 15:33:20 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	char	*tmp_dst;
-	char	*tmp_src;
+	t_list	*tmp;
 
-	if (!src && !dst)
-		return (dst);
-	tmp_dst = (char *) dst;
-	tmp_src = (const char *) src;
-	while (n > 0)
-	{
-		*(tmp_dst++) = *(tmp_src++);
-		n--;
-	}
-	return (dst);
+	tmp = *lst;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
+	new->next = (NULL);
 }
-
-/* int	main(void)
-{
-	char	*p = "Olamundo";
-	char s[15];
-
-	ft_memcpy(s, p, sizeof(p));
-	printf("%s\n,", s);
-} */

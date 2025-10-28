@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 13:43:47 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/28 14:17:34 by csilva           ###   ########.fr       */
+/*   Created: 2025/10/28 14:42:24 by csilva            #+#    #+#             */
+/*   Updated: 2025/10/28 14:52:04 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	*ft_lstsize(t_list *lst)
 {
-	char	*tmp_dst;
-	char	*tmp_src;
+	int	i;
 
-	if (!src && !dst)
-		return (dst);
-	tmp_dst = (char *) dst;
-	tmp_src = (const char *) src;
-	while (n > 0)
+	i = 0;
+	while (lst != 0)
 	{
-		*(tmp_dst++) = *(tmp_src++);
-		n--;
+		i++;
+		lst = lst->next;
 	}
-	return (dst);
+	return (i);
 }
-
-/* int	main(void)
-{
-	char	*p = "Olamundo";
-	char s[15];
-
-	ft_memcpy(s, p, sizeof(p));
-	printf("%s\n,", s);
-} */
