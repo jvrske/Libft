@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:43:36 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/24 17:47:52 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/29 16:38:19 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int	ft_isalpha(int c)
 
 int	main()
 {
-	printf("%d", ft_isalpha(8));
+	printf("My:%d\n", ft_isalpha('y'));
 	return (0);
 } */

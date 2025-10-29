@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 14:31:26 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/28 14:16:59 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/29 13:43:20 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*tmp_s;
-	char	tmp_c;
-	size_t			i;
+	const char	*tmp_s;
+	char		tmp_c;
+	size_t		i;
 
 	i = 0;
 	tmp_s = (const char *) s;
 	tmp_c = (char) c;
-	while (tmp_s[i] && i < n)
+	while (i < n)
 	{
 		if (tmp_s[i] == tmp_c)
 			return ((void *) &tmp_s[i]);

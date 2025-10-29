@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:43:47 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/28 14:17:34 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/29 12:32:14 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char	*tmp_dst;
-	char	*tmp_src;
+	char		*tmp_dst;
+	const char	*tmp_src;
 
 	if (!src && !dst)
 		return (dst);

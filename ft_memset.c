@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:43:52 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/28 14:17:53 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/29 17:04:30 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memset(void *b, int c, size_t len)
 {
 	char	*tmp_ptr;
 
-	if (!b)
-		return (b);
 	tmp_ptr = (char *) b;
 	while (len > 0)
 	{
@@ -26,4 +24,9 @@ void	*ft_memset(void *b, int c, size_t len)
 		len--;
 	}
 	return (b);
+}
+
+int	main(void)
+{
+	
 }

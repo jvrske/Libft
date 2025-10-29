@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:43:39 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/24 17:47:37 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/29 16:38:14 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int	ft_isascii(int c)
 
 int	main()
 {
-	printf("%d", ft_isascii('a'));
+	printf("My:%d\n", ft_isascii('a'));
 	return (0);
 } */

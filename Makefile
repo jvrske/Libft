@@ -6,7 +6,7 @@
 #    By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/22 12:53:30 by csilva            #+#    #+#              #
-#    Updated: 2025/10/24 18:40:39 by csilva           ###   ########.fr        #
+#    Updated: 2025/10/29 14:16:15 by csilva           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,13 +51,26 @@ SRCS =	ft_atoi.c \
 		ft_strtrim.c
 OBJ = $(SRCS:.c=.o)
 
+BONUS = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
+BONUS_OBJ = $(BONUS:.c=.o)
+
 all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar rcs $(NAME) $(BONUS_OBJ)
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 fclean: clean
 	rm -f $(NAME)
 re: fclean all

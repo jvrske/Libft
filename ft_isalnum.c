@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:43:32 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/24 17:48:13 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/29 16:38:24 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_isalnum(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || (c >= 48 && c <= 57))
-		return (1);
+		return (8);
 	return (0);
 }
 
@@ -23,6 +23,6 @@ int	ft_isalnum(int c)
 
 int	main()
 {
-	printf("%d", ft_isalnum('a'));
+	printf("My:%d\n", ft_isalnum('a'));
 	return (0);
 } */

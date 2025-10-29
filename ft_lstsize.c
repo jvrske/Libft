@@ -6,13 +6,13 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 14:42:24 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/28 14:52:04 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/29 14:18:02 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	*ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
