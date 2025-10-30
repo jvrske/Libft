@@ -6,35 +6,40 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:43:47 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/29 12:32:14 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/30 12:20:46 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 //#include <stdio.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char		*tmp_dst;
-	const char	*tmp_src;
+	unsigned char		*tmp_dst;
+	const unsigned char	*tmp_src;
+	size_t				i;
 
-	if (!src && !dst)
-		return (dst);
-	tmp_dst = (char *) dst;
-	tmp_src = (const char *) src;
-	while (n > 0)
+	i = 0;
+	if (!src && !dest)
+		return (dest);
+	tmp_dst = (unsigned char *) dest;
+	tmp_src = (const unsigned char *) src;
+	while (i < n)
 	{
-		*(tmp_dst++) = *(tmp_src++);
-		n--;
+		tmp_dst[i] = tmp_src[i];
+		i++;
 	}
-	return (dst);
+	return (dest);
 }
+/* #include <stdio.h>
 
-/* int	main(void)
+int	main(void)
 {
-	char	*p = "Olamundo";
-	char s[15];
+	char	p[] = "Olamundo";
+	char	s[9];
 
-	ft_memcpy(s, p, sizeof(p));
-	printf("%s\n,", s);
+	char	*f = ft_memcpy(s, p, 3);
+	char	*d = memcpy(s, p, 3);
+	printf("%s\n", f);
+	printf("%s\n", d);
 } */

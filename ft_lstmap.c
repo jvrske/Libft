@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 16:30:19 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/29 14:26:31 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/30 15:57:30 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	void	*ncontent;
 
 	if (!lst || !f)
-		return (0);
+		return (NULL);
 	nlist = (NULL);
 	while (lst)
 	{

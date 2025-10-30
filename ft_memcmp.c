@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 15:26:16 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/29 13:41:41 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/30 15:55:53 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,21 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (i < n)
 	{
 		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+		{
+			if (str1[i] > str2[i])
+				return (1);
+			else
+				return (-1);
+		}
 		i++;
 	}
 	return (0);
 }
+
+/* #include <stdio.h>
+
+int	main(void)
+{
+	printf("%d\n", ft_memcmp("ABC", "ABC", 3));
+	printf("%d\n", memcmp("ABC", "ABC", 3));
+} */

@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 12:01:29 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/27 13:48:27 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/30 14:53:52 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 int	main(void)
 {
-	printf("%i\n", ft_strncmp("abcdefgh", "abcdwxyz", 5));
-	printf("%i\n", strncmp("abcdefgh", "abcdwxyz", 5));
+	printf("%i\n", ft_strncmp("ABC", "ABC", 3));
+	printf("%i\n", strncmp("ABC", "ABC", 3));
 } */

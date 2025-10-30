@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 14:31:26 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/29 13:43:20 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/30 15:07:57 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ void	*ft_memchr(const void *s, int c, size_t n)
 int	main(void)
 {
 	char	*c;
+	char	*d;
 
-	c = ft_memchr("Caio", 'i', 4);
+	c = ft_memchr("Caio", 'i', 3);
+	d = memchr("Caio", 'i', 3);
 	printf("%s\n", c);
+	printf("%s\n", d);
 } */

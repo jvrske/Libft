@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:08:12 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/27 15:33:50 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/30 16:10:08 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 		return (NULL);
 	index1 = left_right(s1, set);
 	index2 = right_left(s1, set);
-	new_s = malloc(sizeof(char) * (index2 - index1) + 1);
+	new_s = ft_calloc((index2 - index1) + 1, sizeof(char));
 	if (!new_s)
 		return (NULL);
 	while (index1 < index2)
@@ -98,4 +98,4 @@ int	main(void)
 	char	*b = " ";
 	printf("%s\n", ft_strtrim(a, b));
 	return (0);
-} */
+}  */

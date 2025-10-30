@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:00:51 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/27 16:14:10 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/30 15:29:13 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,15 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
+
+/* #include <stdio.h>
+
+int	main(void)
+{
+	char	*s1 = "lorem ipsum dolor escola";
+	char	*s2 = "ipsum";
+	
+	char	*res = ft_strnstr(s1, s2, 20);
+	printf("%s\n", res);
+}
+ */

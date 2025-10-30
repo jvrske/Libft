@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 11:10:09 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/21 11:10:57 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/30 13:51:53 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,10 @@ int	ft_tolower(int c)
 		return (c + 32);
 	return (c);
 }
+
+/* #include <stdio.h>
+
+int	main(void)
+{
+	printf("%c\n", ft_tolower('A'));
+} */

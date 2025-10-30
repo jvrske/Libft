@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:11:38 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/27 11:49:36 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/30 13:48:48 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,34 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dst_len;
 	size_t	total_len;
+	size_t	i;
 
+	i = 0;
 	dst_len = ft_strlen(dst);
 	total_len = ft_strlen(src) + dst_len;
 	if (dst_len >= size)
 		return (ft_strlen(src) + size);
-	while (*src != '\0' && dst_len < size - 1)
+	while ((i + dst_len) < size - 1 && src[i])
 	{
-		dst[dst_len++] = *(src++);
+		dst[i + dst_len] = src[i];
+		i++;
 	}
-	dst[dst_len] = '\0';
+	dst[i + dst_len] = '\0';
 	return (total_len);
 }
+
+/* #include <stdio.h>
+
+int	main(void)
+{
+	char	d1[13] = "Hello ";
+	char	s1[] = "World";
+
+	char	d[13] = "Hello ";
+	char	s[] = "World";
+
+	printf("%zu\n", ft_strlcat(d1, s1, 12));
+	printf("%zu\n", strlcat(d, s, 12));
+	printf("%s\n", d1);
+	printf("%s\n", d);
+} */
