@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 12:22:15 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/30 17:02:00 by csilva           ###   ########.fr       */
+/*   Updated: 2025/10/31 11:38:29 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,18 @@ static char	*string_splitter(const char *s, char c)
 	return (str);
 }
 
-static void	free_new_s(char **new_s)
+static void	*free_new_s(char **new_s)
 {
 	int	i;
 
 	i = 0;
-	if (!new_s)
-		return ;
 	while (new_s[i])
 	{
 		free (new_s[i]);
 		i++;
 	}
 	free (new_s);
+	return (NULL);
 }
 
 char	**ft_split(const char *s, char c)
@@ -86,10 +85,7 @@ char	**ft_split(const char *s, char c)
 		{
 			new_s[j] = string_splitter(&s[i], c);
 			if (!new_s[j])
-			{
-				free_new_s(new_s);
-				return (NULL);
-			}
+				return (free_new_s(new_s));
 			j++;
 			while (s[i] && s[i] != c)
 				i++;
