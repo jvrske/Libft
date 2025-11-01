@@ -1,101 +1,89 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/24 12:22:15 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/31 11:38:29 by csilva           ###   ########.fr       */
+/*   Created: 2025/11/01 11:06:16 by csilva            #+#    #+#             */
+/*   Updated: 2025/11/01 14:24:39 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(const char *s, char c)
+static size_t	ft_word_len(const char *s, char c)
 {
 	size_t	i;
-	int		words;
+
+	if (!s)
+		return (0);
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	return (i);
+}
+
+static size_t	ft_nword(const char *s, char c)
+{
+	size_t	i;
+	size_t	word;
 
 	i = 0;
-	words = 0;
+	word = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 	{
-		if (s[i] != c)
-		{
-			words++;
-			while (s[i] && s[i] != c)
-				i++;
-		}
-		else
-			i++;
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
+			word++;
+		i++;
 	}
-	return (words);
+	return (word);
 }
 
-static char	*string_splitter(const char *s, char c)
+static void	*ft_free(char **new)
 {
 	size_t	i;
-	char	*str;
 
 	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	str = ft_calloc(i + 1, sizeof(char));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (s[i] && s[i] != c)
+	while (new[i])
 	{
-		str[i] = s[i];
+		free(new[i]);
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
-}
-
-static void	*free_new_s(char **new_s)
-{
-	int	i;
-
-	i = 0;
-	while (new_s[i])
-	{
-		free (new_s[i]);
-		i++;
-	}
-	free (new_s);
+	free(new);
 	return (NULL);
 }
 
 char	**ft_split(const char *s, char c)
 {
-	char	**new_s;
+	char	**new;
 	size_t	i;
-	size_t	j;
+	size_t	nword;
+	size_t	lenword;
 
-	new_s = ft_calloc((count_words(s, c) + 1), sizeof(char *));
-	if (!new_s)
+	if (!s)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (s[i])
+	nword = ft_nword(s, c);
+	new = (char **)ft_calloc(nword + 1, sizeof(char *));
+	if (!new)
+		return (NULL);
+	while (i < nword)
 	{
-		if (s[i] != c)
-		{
-			new_s[j] = string_splitter(&s[i], c);
-			if (!new_s[j])
-				return (free_new_s(new_s));
-			j++;
-			while (s[i] && s[i] != c)
-				i++;
-		}
-		else
-			i++;
+		while (*s && *s == c)
+			s++;
+		lenword = ft_word_len(s, c);
+		new[i] = (char *)ft_calloc(lenword + 1, sizeof(char));
+		if (!new[i])
+			return (ft_free(new));
+		ft_memcpy(new[i], s, lenword);
+		i++;
+		s += lenword;
 	}
-	return (new_s);
+	return (new);
 }
-
 /* #include <stdio.h>
 int	main(void)
 {
