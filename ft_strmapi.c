@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 11:25:13 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/27 16:10:14 by csilva           ###   ########.fr       */
+/*   Updated: 2025/11/03 14:21:23 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		new_s[i] = f(i, s[i]);
 		i++;
 	}
-	new_s[i] = '\0';
 	return (new_s);
 }
 

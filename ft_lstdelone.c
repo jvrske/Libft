@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 16:14:46 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/29 11:14:24 by csilva           ###   ########.fr       */
+/*   Created: 2025/10/28 15:38:25 by csilva            #+#    #+#             */
+/*   Updated: 2025/11/03 16:09:29 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list	*tmp;
-
-	tmp = lst;
-	if (!lst || !f)
+	if (!lst || !del)
 		return ;
-	while (tmp)
-	{
-		f(tmp->content);
-		tmp = tmp->next;
-	}
+	del(lst->content);
+	free(lst);
 }
+
+/* #include <stdio.h>
+
+void deletnode(void *d)
+{
+    free(d);
+}
+
+int	main(void)
+{
+	t_list	*l1 = ft_lstnew(strdup("abc"));
+	t_list	*l2 = ft_lstnew(strdup("cba"));
+
+	l1->next = l2;
+
+	ft_lstdelone(l2, deletnode);
+	l1->next = NULL;
+	printf("%d", ft_lstsize(l1));
+}
+ */

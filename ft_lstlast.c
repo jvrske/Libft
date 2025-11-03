@@ -1,50 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 18:04:47 by csilva            #+#    #+#             */
-/*   Updated: 2025/11/03 12:38:45 by csilva           ###   ########.fr       */
+/*   Created: 2025/10/28 14:54:00 by csilva            #+#    #+#             */
+/*   Updated: 2025/11/03 14:48:34 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+t_list	*ft_lstlast(t_list *lst)
 {
-	unsigned char	*tmp;
-	size_t			i;
+	t_list	*tmp;
 
-	i = 0;
-	if (size == 0)
-		return (malloc(0));
-	if (size != 0 && count > SIZE_MAX / size)
-		return (malloc(0));
-	if (!count || !size)
-		return (malloc(0));
-	tmp = malloc(count * size);
+	tmp = lst;
 	if (!tmp)
 		return (NULL);
-	while (i - count * size)
-	{
-		tmp[i] = 0;
-		i++;
-	}
+	while (tmp->next)
+		tmp = tmp->next;
 	return (tmp);
 }
 
 /* #include <stdio.h>
+#include <stdlib.h>
 
 int	main(void)
 {
-	char	*str = "Hello World";
-	char	*s = ft_calloc(strlen(str) + 1, sizeof(char));
-	if (!s)
-		return (1);
-	strcpy (s, "Hello World");
-	printf ("%s\n", s);
-	free (s);
-}
- */
+	t_list	*l1 = malloc(sizeof(*l1));
+	t_list	*l2 = malloc(sizeof(*l2));
+	t_list	*l3 = malloc(sizeof(*l3));
+	t_list	*last = NULL;
+
+	int	a = 1;
+	int b = 2;
+	int c = 3;
+
+	l1->content = &a;
+	l2->content = &b;
+	l3->content = &c;
+
+	l1->next = l2;
+	l2->next = l3;
+	l3->next = NULL;
+
+	last = ft_lstlast(l1);
+	printf("%s\n", (char *)last->next);
+	printf("%d", *(int *)last->content);
+} */

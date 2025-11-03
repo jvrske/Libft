@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:12:49 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/30 15:55:28 by csilva           ###   ########.fr       */
+/*   Updated: 2025/11/03 16:06:35 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ char	*ft_strdup(const char *s1)
 		dst[i] = s1[i];
 		i++;
 	}
-	dst[i] = 0;
 	return (dst);
 }
 

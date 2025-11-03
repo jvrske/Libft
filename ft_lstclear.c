@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 15:51:30 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/28 16:42:13 by csilva           ###   ########.fr       */
+/*   Updated: 2025/11/03 16:17:44 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,24 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
+/* 
+#include <stdio.h>
+
+void deletnode(void *d)
+{
+    free(d);
+}
+
+int	main(void)
+{
+	t_list	*l1 = ft_lstnew(ft_strdup("abc"));
+	t_list	*l2 = ft_lstnew(ft_strdup("cba"));
+	t_list	*l3 = ft_lstnew(ft_strdup("ccc"));
+
+	l1->next = l2;
+	l2->next = l3;
+	l3->next = NULL;
+
+	ft_lstclear(&l1, deletnode);
+	printf("%s", (char *)l1);
+} */

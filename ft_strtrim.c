@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:08:12 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/30 16:10:08 by csilva           ###   ########.fr       */
+/*   Updated: 2025/11/03 12:18:13 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ char	*ft_strtrim(const char *s1, const char *set)
 		i++;
 		index1++;
 	}
-	new_s[i] = '\0';
 	return (new_s);
 }
 

@@ -6,14 +6,14 @@
 #    By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/22 12:53:30 by csilva            #+#    #+#              #
-#    Updated: 2025/10/29 14:16:15 by csilva           ###   ########.fr        #
+#    Updated: 2025/11/03 13:52:46 by csilva           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -I includes
+CFLAGS = -Wall -Werror -Wextra -I .
 SRCS =	ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
@@ -35,7 +35,6 @@ SRCS =	ft_atoi.c \
 		ft_strncmp.c \
 		ft_strnstr.c \
 		ft_strrchr.c \
-		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c \
 		ft_substr.c \
@@ -64,13 +63,17 @@ BONUS_OBJ = $(BONUS:.c=.o)
 
 all: $(NAME)
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@ar rcs $(NAME) $(OBJ)
+$(OBJ): $(SRCS)
+	@$(CC) $(CFLAGS) -c $< -o $@
 bonus: $(OBJ) $(BONUS_OBJ)
-	ar rcs $(NAME) $(BONUS_OBJ)
+	@ar rcs $(NAME) $(BONUS_OBJ) $(OBJ)
+$(BONUS_OBJ): $(BONUS)
+	@$(CC) $(CFLAGS) -c $< -o $@
 clean:
-	rm -f $(OBJ) $(BONUS_OBJ)
+	@rm -f $(OBJ) $(BONUS_OBJ)
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 re: fclean all
+
+.PHONY: all bonus clean fclean re
