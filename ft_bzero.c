@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:43:25 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/30 11:45:26 by csilva           ###   ########.fr       */
+/*   Updated: 2025/11/04 14:35:36 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(void)
 	int	i;
 
 	i = 0;
-	ft_bzero(c, 5);
+	ft_bzero(c, 12);
 	while (i < 12)
 	{
 		printf("%d", c[i]);

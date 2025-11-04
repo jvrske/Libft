@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 12:22:33 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/24 12:22:36 by csilva           ###   ########.fr       */
+/*   Updated: 2025/11/04 15:33:43 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ static int	int_len(int c)
 	}
 	while (n > 0)
 	{
-		len++;
 		n /= 10;
+		len++;
 	}
 	return (len);
 }

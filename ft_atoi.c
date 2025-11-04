@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:59:42 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/22 13:00:54 by csilva           ###   ########.fr       */
+/*   Updated: 2025/11/04 14:25:39 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,10 @@ int	ft_atoi(const char *str)
 }
 
 /* #include <stdio.h>
+
 int	main(void)
 {
-	const char *c = "++123456";
+	const char *c = "123456";
 	printf("%d\n", ft_atoi(c));
 	return (0);
 } */

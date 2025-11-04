@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split2.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 11:06:16 by csilva            #+#    #+#             */
-/*   Updated: 2025/11/01 14:24:39 by csilva           ###   ########.fr       */
+/*   Updated: 2025/11/04 12:39:17 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,19 @@ char	**ft_split(const char *s, char c)
 	return (new);
 }
 /* #include <stdio.h>
+
 int	main(void)
 {
 	char    **result;
-	int i;
+	int 	i;
 
-	result = ft_split("Hello World This is a test", ' ');
+	result = ft_split(NULL, ' ');
+	if (!result)
+	{
+		printf("ft_split retornou NULL (entrada NULL)\n");
+		return (0);
+	}
+
 	i = 0;
 	while (result[i])
 	{

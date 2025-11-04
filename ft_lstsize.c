@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 14:42:24 by csilva            #+#    #+#             */
-/*   Updated: 2025/11/03 14:37:17 by csilva           ###   ########.fr       */
+/*   Updated: 2025/11/04 15:47:00 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	i;
 
 	i = 0;
-	while (lst != 0)
+	while (lst)
 	{
 		i++;
 		lst = lst->next;
