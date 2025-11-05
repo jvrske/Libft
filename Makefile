@@ -6,7 +6,7 @@
 #    By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/22 12:53:30 by csilva            #+#    #+#              #
-#    Updated: 2025/11/03 13:52:46 by csilva           ###   ########.fr        #
+#    Updated: 2025/11/05 12:24:04 by csilva           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ SRCS =	ft_atoi.c \
 		ft_putnbr_fd.c \
 		ft_strjoin.c \
 		ft_strtrim.c
+		
 OBJ = $(SRCS:.c=.o)
 
 BONUS = ft_lstnew.c \
@@ -59,16 +60,15 @@ BONUS = ft_lstnew.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
 		ft_lstmap.c
+		
 BONUS_OBJ = $(BONUS:.c=.o)
 
 all: $(NAME)
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
-$(OBJ): $(SRCS)
-	@$(CC) $(CFLAGS) -c $< -o $@
 bonus: $(OBJ) $(BONUS_OBJ)
-	@ar rcs $(NAME) $(BONUS_OBJ) $(OBJ)
-$(BONUS_OBJ): $(BONUS)
+	@ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+%.o:%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	@rm -f $(OBJ) $(BONUS_OBJ)

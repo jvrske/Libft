@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 15:05:59 by csilva            #+#    #+#             */
-/*   Updated: 2025/11/03 16:24:38 by csilva           ###   ########.fr       */
+/*   Updated: 2025/11/05 14:17:18 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!lst || !new)
 		return ;
-	if (*lst == 0)
+	if (!*lst)
 	{
 		*lst = new;
 		return ;
@@ -27,7 +27,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->next = new;
-	new->next = (NULL);
+	new->next = NULL;
 }
 
 /* #include <stdio.h>

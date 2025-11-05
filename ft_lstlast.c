@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 14:54:00 by csilva            #+#    #+#             */
-/*   Updated: 2025/11/03 14:48:34 by csilva           ###   ########.fr       */
+/*   Updated: 2025/11/05 15:12:15 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*tmp;
-
-	tmp = lst;
-	if (!tmp)
+	if (!lst)
 		return (NULL);
-	while (tmp->next)
-		tmp = tmp->next;
-	return (tmp);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
 
 /* #include <stdio.h>

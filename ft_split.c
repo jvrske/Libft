@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 11:06:16 by csilva            #+#    #+#             */
-/*   Updated: 2025/11/04 12:39:17 by csilva           ###   ########.fr       */
+/*   Updated: 2025/11/05 15:39:48 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	**ft_split(const char *s, char c)
 		return (NULL);
 	i = 0;
 	nword = ft_nword(s, c);
-	new = (char **)ft_calloc(nword + 1, sizeof(char *));
+	new = ft_calloc(nword + 1, sizeof(char *));
 	if (!new)
 		return (NULL);
 	while (i < nword)
@@ -75,7 +75,7 @@ char	**ft_split(const char *s, char c)
 		while (*s && *s == c)
 			s++;
 		lenword = ft_word_len(s, c);
-		new[i] = (char *)ft_calloc(lenword + 1, sizeof(char));
+		new[i] = ft_calloc(lenword + 1, sizeof(char));
 		if (!new[i])
 			return (ft_free(new));
 		ft_memcpy(new[i], s, lenword);

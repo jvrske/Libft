@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:08:12 by csilva            #+#    #+#             */
-/*   Updated: 2025/11/03 12:18:13 by csilva           ###   ########.fr       */
+/*   Updated: 2025/11/05 14:57:16 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,11 @@ char	*ft_strtrim(const char *s1, const char *set)
 	int		index2;
 	char	*new_s;
 
-	i = 0;
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
+	i = 0;
 	index1 = left_right(s1, set);
 	index2 = right_left(s1, set);
 	new_s = ft_calloc((index2 - index1) + 1, sizeof(char));

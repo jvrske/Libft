@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 14:52:45 by csilva            #+#    #+#             */
-/*   Updated: 2025/10/24 17:03:59 by csilva           ###   ########.fr       */
+/*   Updated: 2025/11/05 14:51:32 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putnbr_fd(int n, int fd)
 	long	num;
 	char	c;
 
+	if (fd < 0)
+		return ;
 	num = n;
 	if (num < 0)
 	{
